@@ -217,7 +217,7 @@ initial_teachers = [
 
 initial_announcements = [
     {
-        "message": "Inscricoes abertas para atividades do semestre. Garanta sua vaga ate o prazo final!",
+        "message": "Inscrições abertas para atividades do semestre. Garanta sua vaga até o prazo final!",
         "start_date": None,
         "expires_at": (date.today() + timedelta(days=45)).isoformat(),
         "created_at": date.today().isoformat()
