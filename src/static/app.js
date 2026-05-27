@@ -190,7 +190,11 @@ document.addEventListener("DOMContentLoaded", () => {
       activeAnnouncements = await response.json();
       renderAnnouncementBanner();
     } catch (error) {
-      announcementBanner.classList.add("hidden");
+      clearInterval(announcementRotationTimer);
+      announcementRotationTimer = null;
+      activeAnnouncements = [];
+      currentAnnouncementIndex = 0;
+      renderAnnouncementBanner();
       console.error("Erro ao carregar anúncios ativos:", error);
     }
   }
