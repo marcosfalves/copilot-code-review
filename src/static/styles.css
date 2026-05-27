@@ -622,6 +622,7 @@ footer {
 #user-status {
   display: flex;
   align-items: center;
+  gap: 8px;
 }
 
 #user-info {
@@ -666,9 +667,209 @@ footer {
 }
 
 .announcement-banner {
-  background-color: var(--success);
+  background: linear-gradient(120deg, #005a4f, #0f766e);
   color: var(--primary-text);
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  box-shadow: 0 8px 18px rgba(0, 90, 79, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.announcement-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+}
+
+#announcement-message {
+  line-height: 1.4;
+}
+
+.announcement-indicators {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.announcement-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  background: rgba(255, 255, 255, 0.35);
+  cursor: pointer;
+  padding: 0;
+}
+
+.announcement-dot.active {
+  background: #ffffff;
+}
+
+.announcements-modal-content {
+  max-width: 780px;
+  width: 94%;
+}
+
+.announcements-modal-subtitle {
+  color: var(--text-secondary);
+  margin-bottom: 14px;
+}
+
+.announcement-form {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 14px;
+  background: #fcfcff;
+  margin-bottom: 14px;
+}
+
+.announcement-form textarea {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 10px;
+  resize: vertical;
+  min-height: 72px;
+}
+
+.announcement-date-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.announcement-form-actions {
+  margin-top: 8px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.secondary-action {
+  background: #eef1f7;
+  color: #283548;
+}
+
+.secondary-action:hover {
+  background: #dde4f0;
+}
+
+.danger-action {
+  background: #cb2431;
+}
+
+.danger-action:hover {
+  background: #a31824;
+}
+
+.announcements-list-wrapper h4 {
+  margin-bottom: 10px;
+  color: var(--primary);
+}
+
+.announcements-list {
+  display: grid;
+  gap: 10px;
+  max-height: 320px;
+  overflow-y: auto;
+  padding-right: 2px;
+}
+
+.announcement-item {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px;
+  background: #ffffff;
+}
+
+.announcement-item header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: transparent;
+  color: inherit;
+  box-shadow: none;
+  margin: 0 0 8px 0;
+  padding: 0;
+  border-radius: 0;
+}
+
+.announcement-item p {
+  margin-bottom: 8px;
+  line-height: 1.45;
+}
+
+.announcement-item-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.announcement-item-dates {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.announcement-status {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 3px 10px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.25px;
+}
+
+.status-active {
+  background: #def7e8;
+  color: #0d7a44;
+}
+
+.status-scheduled {
+  background: #fff5d6;
+  color: #8f6200;
+}
+
+.status-expired {
+  background: #fde2e3;
+  color: #b4232d;
+}
+
+.empty-announcements {
+  border: 1px dashed var(--border);
+  border-radius: 8px;
+  padding: 14px;
   text-align: center;
-  padding: 15px;
-  font-weight: bold;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 767px) {
+  .announcement-banner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .announcement-date-grid {
+    grid-template-columns: 1fr;
+  }
+
+  #user-controls {
+    position: static;
+    margin-top: 10px;
+  }
+
+  .announcement-item header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
 }
